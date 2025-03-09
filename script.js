@@ -1,25 +1,37 @@
 //complete this code
 class Rectangle {
-	constructor(width,height){
-		this.width=width;
-		this.height=height;
-	}
-	Getter(){
-		return (this.width,this.height)
-	}
-	calculate(){
-		return (this.width*this.height)
-	}
+  constructor(width, height) {
+    if (width <= 0 || height <= 0) {
+      throw new Error("Width and height must be positive integers");
+    }
+    this.width = width;
+    this.height = height;
+  }
+
+  get width() {
+    return this.width;
+  }
+
+  get height() {
+    return this.height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
 }
 
-class Square extends Animal {
-	constructor(side){
-		this.side=side;
-		super(width,height)
-	}
-	getPerimeter(){
-		console.log(4*side)
-	}
+class Square extends Rectangle {
+  constructor(side) {
+    if (side <= 0) {
+      throw new Error("Side must be a positive integer");
+    }
+    super(side, side);
+  }
+
+  getPerimeter() {
+    return 4 * this.width;
+  }
 }
 
 // Do not change the code below this line
