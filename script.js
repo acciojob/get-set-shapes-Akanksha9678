@@ -1,9 +1,6 @@
 //complete this code
 class Rectangle {
   constructor(width, height) {
-    // if (width <= 0 || height <= 0) {
-    //   throw new Error("Width and height must be positive integers");
-    // }
     this._width = width;
     this._height = height;
   }
@@ -27,8 +24,9 @@ class Rectangle {
 
 class Square extends Rectangle {
   constructor(side) {
-	  this._side=side
+	  
     super(side, side);
+	  this._side=side
   }
 
   getPerimeter() {
